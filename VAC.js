@@ -1,5 +1,5 @@
 
- let i = 1;
+ let i = 10;
 
  let x = prompt('Enter A Number');
 
