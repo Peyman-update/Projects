@@ -1,33 +1,33 @@
 
-//  let i = 1;
+ let i = 1;
 
-//  let x = prompt('Enter A Number');
+ let x = prompt('Enter A Number');
 
-// // while (i <= 1000) {
-
-// //     if (i == x) {
-       
-// //        document.writeln( `<h2>${i}</h2>`)
-// //         i++
-// //         continue;
-        
-// //     }
-// //     document.writeln(`${i},`);
-// //     i++;
-// // }
-
-
-// do{
+// while (i <= 1000) {
 
 //     if (i == x) {
        
-//        document.writeln( `<h2 class>${i}</h2>`)
+//        document.writeln( `<h2>${i}</h2>`)
 //         i++
 //         continue;
+        
 //     }
-
 //     document.writeln(`${i},`);
-//      i++;
+//     i++;
 // }
-// while (i<1000);
+
+
+do{
+
+    if (i == x) {
+       
+       document.writeln( `<h2 class>${i}</h2>`)
+        i++
+        continue;
+    }
+
+    document.writeln(`${i},`);
+     i++;
+}
+while (i<1000);
 
