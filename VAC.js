@@ -1,68 +1,80 @@
 
-function Square(speed) {
+function PrintSeparate(conut) {
 
-    this.createSquare = () => {
+    this.STR = 'Peyman Khezli I am Enginner Computer';
 
-        let set = setInterval(() => {
+    this.Counter = 0;
 
-            let Element = document.createElement('div');
-            document.body.append(Element);
-            Element.style.backgroundColor = this.randomColor();
-            Element.innerHTML = `${this.letter()} ${this.randomNumber(1, 100)}`;
+    this.Separate = () => {
 
-        }, speed);
-    }
+        const interval = setInterval(() => {
 
-    this.randomColor = () => {
+            document.write(this.STR[this.Counter++]);
+            console.log(this.Counter);
+            if (this.Counter == this.STR.length) {
+                clearInterval(interval);
+            }
 
-        let letters = '0123456789ABCDEF'
-        let color = '#';
-        let i = 0;
-        do {
-            color += letters[Math.floor(Math.random() * 16)]
-            i++
-        } while (i < 6)
-
-        return color;
-    }
-
-    this.randomNumber = function (min, max) {
-
-        return Math.floor(Math.random() * (max - min)) + min;
+        }, conut);
     }
 
 }
 
-const another = new Square(1000);
+const another = new PrintSeparate(1000);
 
-// delete createSquare function
+another.Separate();
 
-//delete another.createSquare;
+// Addtion ramdomColor to Object
 
-another.createSquare();
+another.radomColor = () => {
+    
+    let letters = '123456789ABCDEF';
+    let color = '#';
+    
+    for (let i = 0; i < 6; i++) {
+        
+        color += letters[Math.floor(Math.random() * 16)]
+    }
+    
+    return color;
+    
+};
 
-// Addtion a property to another Object
+// Addtion ramdomNumber to Object
 
-another.color = 'red';
+another.ramdomNumber = function (Min , Max) { 
+    
+   return Math.floor(Math.random() * (Max - Min) + Min)
 
-// Addtion a function to another Object
-
-another.letter = function () {
-
-    let STR = 'The English Language Center has been dedicated to providing English programs of the highest quality to international students since 1978'
-
-    let random = STR[Math.floor(Math.random() * 136)];
+}; 
 
 
-    return random;
+console.log(another.radomColor());
+
+console.log(another.ramdomNumber(10 , 20000));
+
+
+
+//to navigate
+
+for (const key in another) {
+
+ console.log(key)
+}
+
+const Navigate = Object.keys(another); 
+
+const Navigate0 = Object.entries(another); 
+
+for (const iterator of Navigate0) {
+    
+    console.log(iterator)
 
 }
 
 
 
-// delete Color property as another Object
 
-delete another.color;
 
 
 
