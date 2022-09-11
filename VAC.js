@@ -1,87 +1,87 @@
 
-function PrintSeparate(conut) {
+///////////////////////////Main-Object///////////////////////////////////
 
-    this.STR = 'Peyman Khezli I am Enginner Computer';
+function circle1() {
+    return {
 
-    this.Counter = 0;
+        color: 'red',
 
-    this.Separate = () => {
-
-        const interval = setInterval(() => {
-
-            document.write(this.STR[this.Counter++]);
-            console.log(this.Counter);
-            if (this.Counter == this.STR.length) {
-                clearInterval(interval);
-            }
-
-        }, conut);
+        console: function () {
+            console.log('Hello Peyman')
+        }
     }
-
 }
 
-const another = new PrintSeparate(1000);
 
-another.Separate();
+const another = circle1();
 
-// Addtion ramdomColor to Object
-
-another.radomColor = () => {
-    
-    let letters = '123456789ABCDEF';
-    let color = '#';
-    
-    for (let i = 0; i < 6; i++) {
-        
-        color += letters[Math.floor(Math.random() * 16)]
-    }
-    
-    return color;
-    
-};
-
-// Addtion ramdomNumber to Object
-
-another.ramdomNumber = function (Min , Max) { 
-    
-   return Math.floor(Math.random() * (Max - Min) + Min)
-
-}; 
+another.name = 'Pride';
+another.mode = 1400;
+another.wheel = 4;
+another.speed = 100000000 + 'km';
 
 
-console.log(another.radomColor());
+const Const = Object.keys(another);
 
-console.log(another.ramdomNumber(10 , 20000));
+console.log('/////////////////////// Keys ////////////////////');
+
+console.log(Const);
 
 
+const Const1 = Object.entries(another);
 
-//to navigate
+console.log('/////////////////////// entries ////////////////////');
+
+console.log(Const1);
+
+
+console.log('/////////////////////// For in ////////////////////');
 
 for (const key in another) {
 
- console.log(key)
+    console.log(another[key])
 }
 
-const Navigate = Object.keys(another); 
+console.log('/////////////////////// For of ////////////////////');
 
-const Navigate0 = Object.entries(another); 
+for (const iterator of Const1) {
 
-for (const iterator of Navigate0) {
-    
     console.log(iterator)
 
 }
 
 
+console.log('/////////////////////// New Object ////////////////////');
 
+function Car1() {
+    this.Number = `12 ${'ث'} 632`; 
+}
 
+const another1 = new Car1(); 
 
+console.log('/////////////////////// Clone Object another ////////////////////');
 
+////////////////////solution-one//////////////////
 
+for (const key in another) {
 
+    another1[key] = another[key]
 
+}
 
+console.log(another1);
 
+////////////////////solution-Two//////////////////
+
+const ano = Object.assign(another1, another);
+
+console.log(ano);
+
+////////////////////solution-Three//////////////////
+
+const ano1 = { ...another }; 
+
+console.log(ano1);
 
 
 
