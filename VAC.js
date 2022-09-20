@@ -1,87 +1,61 @@
 
-///////////////////////////Main-Object///////////////////////////////////
+////////////////////// String Method ////////////////////////
 
-function circle1() {
-    return {
+// charAt()	Returns the character at a specified index (position)
 
-        color: 'red',
+// charCodeAt()	Returns the Unicode of the character at a specified index
 
-        console: function () {
-            console.log('Hello Peyman')
-        }
-    }
-}
+// charCodeAt() vs codePointAt()
 
+// The concat() method joins two or more strings.
 
-const another = circle1();
-
-another.name = 'Pride';
-another.mode = 1400;
-another.wheel = 4;
-another.speed = 100000000 + 'km';
+// endsWith()	Returns if a string ends with a specified value
 
 
-const Const = Object.keys(another);
-
-console.log('/////////////////////// Keys ////////////////////');
-
-console.log(Const);
 
 
-const Const1 = Object.entries(another);
 
-console.log('/////////////////////// entries ////////////////////');
-
-console.log(Const1);
+let str = 'Returns the character at a specified index (position)';
 
 
-console.log('/////////////////////// For in ////////////////////');
+const frist_charcter = str.charAt(12), frist_unicode = str.charCodeAt(12);
 
-for (const key in another) {
-
-    console.log(another[key])
-}
-
-console.log('/////////////////////// For of ////////////////////');
-
-for (const iterator of Const1) {
-
-    console.log(iterator)
-
-}
+console.log(`frist_unicode : ${frist_unicode} and frist_character ${frist_charcter}`);
 
 
-console.log('/////////////////////// New Object ////////////////////');
+const last_charcter = str.charAt(str.length - 1), last_unicode = str.charCodeAt(str.length - 1);
 
-function Car1() {
-    this.Number = `12 ${'ث'} 632`; 
-}
+console.log(`unicode : ${last_unicode} and lastCharacter : ${last_charcter}`);
 
-const another1 = new Car1(); 
 
-console.log('/////////////////////// Clone Object another ////////////////////');
+let str1 = 'Returns the Unicode of the character at a specified index';
 
-////////////////////solution-one//////////////////
 
-for (const key in another) {
+const character_unicode = str1.charAt(12), unicode = str1.charCodeAt(12), unicode_point = str1.codePointAt(12);
 
-    another1[key] = another[key]
+console.log(`unicode : ${unicode} and unicode_point : ${unicode_point} and character : ${character_unicode} `);
 
-}
 
-console.log(another1);
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-////////////////////solution-Two//////////////////
 
-const ano = Object.assign(another1, another);
+let concatStr = str.concat(str1);
 
-console.log(ano);
+let concatindex = str.concat(str1[str1.length - 1]);
 
-////////////////////solution-Three//////////////////
+console.log(`\nTwo String above are concat : ${concatStr}`);
 
-const ano1 = { ...another }; 
 
-console.log(ano1);
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+let endswith = 'Returns if a string ends with a specified value';
+
+console.log(`\n is it endWith String value ? : ${endswith.endsWith('value')}`);
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 
 
